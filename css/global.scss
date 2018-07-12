@@ -1,0 +1,31 @@
+@charset 'utf-8';
+// 手机下展示效果
+@media screen and (max-width: 750px) {
+    .layui-layout-admin {
+        .layui-side {
+            position: fixed;
+            left: -260px;
+            transition: all .3s;
+        }
+        .layui-body {
+            left: 0;
+            transition: all .3s;
+        }
+        .layui-footer {
+            left: 0;
+            transition: all .3s;
+        }
+    } // 手机端样式
+    .site-mobile {
+        &_shade {
+            content: '';
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, .8);
+            z-index: 999;
+        }
+    }
+}
