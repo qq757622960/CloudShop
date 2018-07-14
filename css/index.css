@@ -1,0 +1,28 @@
+@charset "UTF-8";
+/** 
+ * @Author: YISHI 
+ * @Date: 2018-07-14 11:43:41 
+ * @Desc: 首页样式 
+ */
+/** 
+ * @Author: YISHI 
+ * @Date: 2018-07-14 11:41:15 
+ * @Desc: 存放一些变量 
+ */
+.lz-index-header {
+  padding: 20px 0; }
+
+.lz-index-title {
+  margin-top: 10px;
+  line-height: 50px;
+  font-size: 28px; }
+
+.lz-card-title {
+  font-size: 20px;
+  color: #393D49; }
+
+.lz-card-num {
+  padding: 20px 0;
+  font-size: 28px; }
+
+/*# sourceMappingURL=index.css.map */

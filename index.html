@@ -7,38 +7,229 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>云店后台</title>
     <link rel="stylesheet" href="./layui/css/layui.css" />
+    <link rel="stylesheet" href="./css/base.min.css" />
     <link rel="stylesheet" href="./css/global.min.css" />
+    <link rel="stylesheet" href="./css/index.min.css" />
 </head>
 
-<body>
 
-    <body class="layui-layout-body">
+<body class="layui-layout-body">
 
-        <div class="layui-layout layui-layout-admin">
-            <!-- HeaderBar S -->
-            <div class="layui-header">header</div>
-            <!-- HeaderBar E -->
+    <div class="layui-layout layui-layout-admin">
+        <!-- HeaderBar S -->
+        <div class="layui-header">
+            <div class="layui-logo">
+                云店后台
+            </div>
+            <ul class="layui-nav layui-layout-right">
+                <li class="layui-nav-item-1">
+                    <span class="layui-badge layui-bg-green">28</span>天后到期
+                    <!-- <a class="layui-btn layui-btn-xs">立即购买</a> -->
+                </li>
+                <li class="layui-nav-item">
+                    <a href="">admin</a>
+                    <dl class="layui-nav-child">
+                        <dd>
+                            <a href="javascript:;">修改信息</a>
+                        </dd>
+                        <dd>
+                            <a href="javascript:;">安全管理</a>
+                        </dd>
+                        <dd>
+                            <a href="javascript:;">退了</a>
+                        </dd>
+                    </dl>
+                </li>
 
-            <!-- Sidebar S -->
-            <div class="layui-side layui-bg-orange">side</div>
-            <!-- Sidebar E -->
-
-            <!-- Main S -->
-            <div class="layui-body layui-bg-green">body</div>
-            <!-- Main E -->
-
-            <!-- Footer S -->
-            <div class="layui-footer">footer</div>
-            <!-- Footer E -->
+            </ul>
         </div>
-        
-        <script src="./layui/layui.js"></script>
-        <script>
+        <!-- HeaderBar E -->
 
-            layui.use('element', function () {
-                var element = layui.element;
+        <!-- Sidebar S -->
+        <div class="layui-side layui-bg-black">
+            <ul class="layui-nav layui-nav-tree">
+                <li class="layui-nav-item layui-this">
+                    <a href="./index.html">
+                        <i class="layui-icon layui-icon-home"></i>
+                        <cite>首页</cite>
+                    </a>
+                </li>
+                <li class="layui-nav-item" lay-unselect>
+                    <a href="./goodManager.html">
+                        <i class="layui-icon layui-icon-list"></i>
+                        <cite>商品管理</cite>
+                    </a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="./classManager.html">
+                        <i class="layui-icon layui-icon-set"></i>
+                        <cite>分类管理</cite>
+                    </a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="./orderManager.html">
+                        <i class="layui-icon layui-icon-set"></i>
+                        <cite>订单管理</cite>
+                    </a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="./shopManager.html">
+                        <i class="layui-icon layui-icon-set"></i>
+                        <cite>店铺管理</cite>
+                    </a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="./activityManager.html">
+                        <i class="layui-icon layui-icon-set"></i>
+                        <cite>活动管理</cite>
+                    </a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="./personCenter.html">
+                        <i class="layui-icon layui-icon-username"></i>
+                        <cite>个人中心</cite>
+                    </a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="./setting.html">
+                        <i class="layui-icon layui-icon-set"></i>
+                        <cite>设置</cite>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- Sidebar E -->
+
+        <!-- Main S -->
+        <div class="layui-body">
+            <div class="layui-fluid">
+                <div class="layui-row lz-index-header">
+                    <div class="layui-col-md6">
+                        <h2 class="lz-index-title">实时概况</h2>
+                    </div>
+                    <div class="layui-col-md-offset3 layui-col-md3">
+                        <div class="layui-tab layui-tab-brief" lay-filter="indexTab">
+                            <ul class="layui-tab-title">
+                                <li class="layui-this">今日</li>
+                                <li>本周</li>
+                                <li>本月</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-tab-content" data-tabType="indexTab">
+                    <div class="layui-tab-item layui-show layui-row layui-col-space10">
+                        <div class="layui-col-md4">
+                            <div class="layui-card">
+                                <div class="layui-card-header">
+                                    <h2 class="lz-card-title">今日交易额</h2>
+                                </div>
+                                <div class="layui-card-body">
+                                    <p class="lz-card-num lz-color-green">99991</p>
+                                    <p class="layui-text lz-color-black">昨日交易额：9999</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-col-md4">
+                            <div class="layui-card">
+                                <div class="layui-card-header">
+                                    <h2 class="lz-card-title">今日交易单数</h2>
+                                </div>
+                                <div class="layui-card-body">
+                                    <p class="lz-card-num lz-color-green">99991</p>
+                                    <p class="layui-text lz-color-black">昨日交易单数：9999</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-tab-item layui-row layui-col-space10">
+                        <div class="layui-col-md4">
+                            <div class="layui-card">
+                                <div class="layui-card-header">
+                                    <h2 class="lz-card-title">今日交易额</h2>
+                                </div>
+                                <div class="layui-card-body">
+                                    <p class="lz-card-num lz-color-green">99992</p>
+                                    <p class="layui-text lz-color-black">昨日交易额：9999</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-col-md4">
+                            <div class="layui-card">
+                                <div class="layui-card-header">
+                                    <h2 class="lz-card-title">今日交易单数</h2>
+                                </div>
+                                <div class="layui-card-body">
+                                    <p class="lz-card-num lz-color-green">99991</p>
+                                    <p class="layui-text lz-color-black">昨日交易单数：9999</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-tab-item layui-row layui-col-space10">
+                        <div class="layui-col-md4">
+                            <div class="layui-card">
+                                <div class="layui-card-header">
+                                    <h2 class="lz-card-title">今日交易额</h2>
+                                </div>
+                                <div class="layui-card-body">
+                                    <p class="lz-card-num lz-color-green">99993</p>
+                                    <p class="layui-text lz-color-black">昨日交易额：9999</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-col-md4">
+                            <div class="layui-card">
+                                <div class="layui-card-header">
+                                    <h2 class="lz-card-title">今日交易单数</h2>
+                                </div>
+                                <div class="layui-card-body">
+                                    <p class="lz-card-num lz-color-green">99991</p>
+                                    <p class="layui-text lz-color-black">昨日交易单数：9999</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <!-- Main E -->
+
+        <!-- Footer S -->
+        <div class="layui-footer lz-copyright">
+            <p class="lz-copyright-infos">江苏乐筑网络科技有限公司</p>
+        </div>
+        <!-- Footer E -->
+
+        <!-- 适配手机端 S -->
+        <div class="site-mobile-tree layui-hide">
+            <i class="layui-icon layui-icon-next"></i>
+        </div>
+        <div class="site-mobile-shade"></div>
+        <!-- 适配手机端 E -->
+    </div>
+
+    <script src="./layui/layui.js"></script>
+    <script>
+        layui.config({
+            base: '/js/'
+        }).use('global');
+    </script>
+    <script>
+        layui.use(['layer', 'element'], function () {
+            var element = layui.element,
+                layer = layui.layer,
+                $ = layui.jquery;
+
+            element.on('tab(indexTab)', function(data) {
+                console.log(data.index);
+                var tabItems = $('.layui-tab-content .layui-tab-item');
+                tabItems.removeClass('layui-show');
+                tabItems.eq(data.index).addClass('layui-show');
             });
-        </script>
-    </body>
+        });
+    </script>
+</body>
 
 </html>

@@ -1,0 +1,24 @@
+@charset "UTF-8";
+/** 
+ * @Author: YISHI 
+ * @Date: 2018-07-14 13:55:14 
+ * @Desc: 订单管理 
+ */
+/** 
+ * @Author: YISHI 
+ * @Date: 2018-07-14 11:41:15 
+ * @Desc: 存放一些变量 
+ */
+.lz-order-manager .lz-om-card .layui-card-header {
+  padding: 20px;
+  height: auto;
+  line-height: inherit; }
+
+@media (max-width: 750px) {
+  .lz-search {
+    margin-top: 20px; }
+
+  .lz-search-input {
+    margin-left: 0; } }
+
+/*# sourceMappingURL=orderManager.css.map */

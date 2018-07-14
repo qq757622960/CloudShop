@@ -1,0 +1,25 @@
+/** 
+ * @Author: YISHI 
+ * @Date: 2018-07-14 11:43:41 
+ * @Desc: 首页样式 
+ */
+
+@charset 'utf-8';
+@import './var';
+.lz-index-header {
+    padding: 20px 0;
+}
+.lz-index-title {
+    margin-top: 10px;
+    line-height: 50px;
+    font-size: 28px;
+} 
+.lz-card-title {
+    font-size: 20px;
+    color: $black;
+}
+
+.lz-card-num {
+    padding: 20px 0;
+    font-size: 28px;
+}

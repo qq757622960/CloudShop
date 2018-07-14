@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        
+        @media (min-width: 20rem) {
+            body:after {
+                content: 'Splus';
+                font-size: 0;
+            }
+        }
+        @media (min-width: 47.5rem) {
+            body:after {
+                content: 'Mplus';
+                font-size: 0;
+            }
+        }
+        @media (min-width: 62.5rem) {
+            body:after {
+                content: 'Lplus';
+                font-size: 0;
+            }
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            margin: 9px;
+            padding: 1px;
+            background-color: red;
+        }
+        p {
+            margin: 20px;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <p>This is a paragraph...</p>
+    </div>
+
+    <script>
+        window.addEventListener('resize', function() {
+            var size = window.getComputedStyle(document.body, ':after').getPropertyValue('content');
+            console.log(size);
+        }, false);
+        
+    </script>
+</body>
+</html>

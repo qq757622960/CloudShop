@@ -1,0 +1,36 @@
+@charset "UTF-8";
+/** 
+ * @Author: YISHI 
+ * @Date: 2018-07-14 11:40:54 
+ * @Desc: 基类 
+ */
+/** 
+ * @Author: YISHI 
+ * @Date: 2018-07-14 11:41:15 
+ * @Desc: 存放一些变量 
+ */
+.lz-color-red {
+  color: #FF5722; }
+
+.lz-color-orange {
+  color: #FFB800; }
+
+.lz-color-green {
+  color: #009688; }
+
+.lz-color-cyan {
+  color: #2F4056; }
+
+.lz-color-blue {
+  color: #1E9FFF; }
+
+.lz-color-black {
+  color: #393D49; }
+
+.lz-mt20 {
+  margin-top: 20px; }
+
+.lz-mt15 {
+  margin-top: 15px; }
+
+/*# sourceMappingURL=base.css.map */

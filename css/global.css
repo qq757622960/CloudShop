@@ -1,6 +1,29 @@
-@media screen and (max-width: 750px) { .layui-layout-admin .layui-side { position: fixed; left: -260px; -webkit-transition: all .3s; transition: all .3s; }
+@charset "UTF-8";
+/**  @Author: YISHI  @Date: 2018-07-13 09:59:48  @Desc: 全局通用样式  */
+/**  @Author: YISHI  @Date: 2018-07-14 11:41:15  @Desc: 存放一些变量  */
+/**  @Author: YISHI  @Date: 2018-07-14 11:41:33  @Desc: 通用代码引用  */
+@media (max-width: 750px) { .layui-layout-admin .layui-side { position: fixed; top: 0; left: -260px; z-index: 10000; -webkit-transition: all .3s; transition: all .3s; }
   .layui-layout-admin .layui-body { left: 0; -webkit-transition: all .3s; transition: all .3s; }
   .layui-layout-admin .layui-footer { left: 0; -webkit-transition: all .3s; transition: all .3s; }
-  .site-mobile_shade { content: ''; position: fixed; top: 0; bottom: 0; left: 0; right: 0; background-color: rgba(0, 0, 0, 0.8); z-index: 999; } }
+  .site-mobile .layui-side { left: 0; }
+  .site-mobile-tree { display: block !important; position: fixed; z-index: 100000; bottom: 15px; left: 15px; width: 50px; height: 50px; line-height: 50px; border-radius: 2px; text-align: center; background-color: rgba(0, 0, 0, 0.7); color: #fff; }
+  .site-mobile .site-mobile-shade { content: ''; position: fixed; top: 0; bottom: 0; left: 0; right: 0; background-color: rgba(0, 0, 0, 0.8); z-index: 999; }
+  .site-mobile .site-mobile-tree { display: none !important; }
+  .layui-layout-admin .layui-logo { left: -40px; } }
+@media (max-width: 320px) { .layui-layout-admin .layui-logo { left: -60px; } }
+.layui-side .layui-nav .layui-nav-item a i { padding-right: 10px; }
+
+.layui-nav .layui-nav-item-1 { position: relative; display: inline-block; vertical-align: middle; line-height: 60px; margin-right: 10px; color: rgba(255, 255, 255, 0.7); }
+.layui-nav .layui-nav-item-1 .layui-btn-xs { margin-left: 5px; font-size: 12px; }
+
+.layui-nav .layui-badge { position: static; }
+
+.lz-copyright { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; }
+.lz-copyright-links a { padding: 0 10px; color: #333; border: 1px solid #ddd; }
+.lz-copyright-infos { text-align: center; color: #333; }
+
+.layui-body { background-color: whitesmoke; }
+
+.layui-footer { background-color: #ffffff; }
 
 /*# sourceMappingURL=global.css.map */

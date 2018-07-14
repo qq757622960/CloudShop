@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": ";AAAA;;;;GAIG;ACJH;;;;GAIG;ADMK,gDAAmB;EACf,OAAO,EAAE,IAAI;EACb,MAAM,EAAE,IAAI;EACZ,WAAW,EAAE,OAAO;;AAKhC,yBAA0B;EACtB,UAAW;IACP,UAAU,EAAE,IAAI;;EAEpB,gBAAiB;IACb,WAAW,EAAE,CAAC",
+"sources": ["orderManager.scss","var.scss"],
+"names": [],
+"file": "orderManager.css"
+}
