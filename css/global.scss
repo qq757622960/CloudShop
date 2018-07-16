@@ -77,6 +77,16 @@
     }
 }
 
+.lz-body-container {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    bottom: 15px;
+    left: 15px;
+    background-color: $white;
+
+    overflow: auto;  // 防止内存背景被截断
+}
 .layui-side {
     .layui-nav {
         .layui-nav-item {
@@ -134,6 +144,7 @@
 .layui-body {
     background-color: lighten($gray, 20%);
 }
+
 .layui-footer {
     background-color: $white;
 }

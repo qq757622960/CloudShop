@@ -102,71 +102,67 @@
 
         <!-- Main S -->
         <div class="layui-body">
-            <div class="layui-fluid lz-mt15">
-                <div class="layui-card lz-om-card">
-                    <div class="layui-card-header">
-                        <div class="layui-row">
-                            <div class="layui-col-md3">
-                                <div class="layui-tab layui-tab-brief" lay-filter="omTab">
-                                    <!-- 外层 Tab 标题 S -->
-                                    <ul class="layui-tab-title">
-                                        <li class="layui-this">今日订单</li>
-                                        <li>历史订单</li>
-                                    </ul>
-                                    <!-- 外层 Tab 标题 E -->
-                                </div>
+            <div class="lz-body-container">
+                <div class="layui-fluid lz-mt15">
+                    <div class="layui-row">
+                        <div class="layui-col-md3">
+                            <div class="layui-tab layui-tab-brief" lay-filter="omTab">
+                                <!-- 外层 Tab 标题 S -->
+                                <ul class="layui-tab-title">
+                                    <li class="layui-this">今日订单</li>
+                                    <li>历史订单</li>
+                                </ul>
+                                <!-- 外层 Tab 标题 E -->
                             </div>
-                            <!-- 搜索框 S -->
-                            <div class="layui-col-md-offset5 layui-col-md4 lz-search">
-                                <div class="layui-form-item">
-                                    <div class="layui-inline">
-                                        <div class="layui-input-block lz-search-input">
-                                            <input type="text" placeholder="请输入" class="layui-input" />
-                                        </div>
-                                    </div>
-                                    <div class="layui-inline">
-                                        <button class="layui-btn">
-                                            <i class="layui-icon layui-icon-search"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- 搜索框 E -->
                         </div>
-                    </div>
-                    <div class="layui-card-body">
-                        <!-- 外层 Tab -> 今日订单、历史订单 S -->
-                        <div class="layui-tab-content" data-tabType="omTab">
-                            <div class="layui-tab-item layui-show">
-                                <!-- 内层 Tab -> 全部、待接单... S -->
-                                <div class="layui-tab layui-tab-brief">
-                                    <ul class="layui-tab-title">
-                                        <li class="layui-this">全部</li>
-                                        <li>待接单</li>
-                                        <li>已接订单</li>
-                                        <li>正在配送</li>
-                                        <li>已完成</li>
-                                        <li>退款</li>
-                                    </ul>
-                                    <div class="layui-tab-content">
-                                        <div class="layui-tab-item layui-show">
-                                            <!-- 全部订单 S -->
-                                            <table class="layui-hide" id="TB_ALL" lay-filter="TB_All_F"></table>
-                                            <!-- 全部订单 S -->
-                                        </div>
-                                        <div class="layui-tab-item">CSS</div>
-                                        <div class="layui-tab-item">JAVASCRIPT</div>
-                                        <div class="layui-tab-item">JAVASCRIPT</div>
-                                        <div class="layui-tab-item">JAVASCRIPT</div>
-                                        <div class="layui-tab-item">JAVASCRIPT</div>
+                        <!-- 搜索框 S -->
+                        <div class="layui-col-md-offset5 layui-col-md4 lz-search">
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <div class="layui-input-block lz-search-input">
+                                        <input type="text" placeholder="请输入" class="layui-input" />
                                     </div>
                                 </div>
-                                <!-- 内层 Tab E -->
+                                <div class="layui-inline">
+                                    <button class="layui-btn">
+                                        <i class="layui-icon layui-icon-search"></i>
+                                    </button>
+                                </div>
                             </div>
-                            <div class="layui-tab-item">历史订单</div>
                         </div>
-                        <!-- 外层 Tab E -->
+                        <!-- 搜索框 E -->
                     </div>
+                    <!-- 外层 Tab -> 今日订单、历史订单 S -->
+                    <div class="layui-tab-content" data-tabType="omTab">
+                        <div class="layui-tab-item layui-show">
+                            <!-- 内层 Tab -> 全部、待接单... S -->
+                            <div class="layui-tab layui-tab-brief">
+                                <ul class="layui-tab-title">
+                                    <li class="layui-this">全部</li>
+                                    <li>待接单</li>
+                                    <li>已接订单</li>
+                                    <li>正在配送</li>
+                                    <li>已完成</li>
+                                    <li>退款</li>
+                                </ul>
+                                <div class="layui-tab-content">
+                                    <div class="layui-tab-item layui-show">
+                                        <!-- 全部订单 S -->
+                                        <table class="layui-hide" id="TB_ALL" lay-filter="TB_All_F"></table>
+                                        <!-- 全部订单 S -->
+                                    </div>
+                                    <div class="layui-tab-item">CSS</div>
+                                    <div class="layui-tab-item">JAVASCRIPT</div>
+                                    <div class="layui-tab-item">JAVASCRIPT</div>
+                                    <div class="layui-tab-item">JAVASCRIPT</div>
+                                    <div class="layui-tab-item">JAVASCRIPT</div>
+                                </div>
+                            </div>
+                            <!-- 内层 Tab E -->
+                        </div>
+                        <div class="layui-tab-item">历史订单</div>
+                    </div>
+                    <!-- 外层 Tab E -->
                 </div>
             </div>
         </div>
@@ -263,7 +259,7 @@
                     "dj": "单价",
                     "zt": "状态",
                     "ztType": Math.floor(Math.random() * 7) + 1
-                    
+
                 }, {
                     "id": 1,
                     "sp": "商品",
@@ -274,13 +270,13 @@
                 }],
                 page: true
             });
-            
+
             // 监听 tool
-            table.on('tool(TB_All_F)', function(obj) {
+            table.on('tool(TB_All_F)', function (obj) {
                 var data = obj.data,      // 当前行数据
                     layEvent = obj.event, // 获得 lay-event 对应的值
                     tr = obj.tr;          // 获得当前行 tr 的 DOM 对象
-                
+
                 if (layEvent === 'order') {
                     layer.msg('接单');
                 } else if (layEvent === 'agree') {

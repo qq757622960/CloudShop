@@ -99,7 +99,13 @@
         <!-- Sidebar E -->
 
         <!-- Main S -->
-        <div class="layui-body"></div>
+        <div class="layui-body">
+            <div class="lz-body-container lz-pad20">
+                <table id="TB_SETTING_BASE" lay-filter="TB_SETTING_BASE_F"></table>
+                <table id="TB_SETTING_PAY" lay-filter="TB_SETTING_PAY_F"></table>
+                <table id="TB_SETTING_NOTICE" lay-filter="TB_SETTING_NOTICE_F"></table>
+            </div>
+        </div>
         <!-- Main E -->
 
         <!-- Footer S -->
@@ -116,6 +122,27 @@
         <!-- 适配手机端 E -->
     </div>
 
+    <!-- SETTING_BASE_TOOL S -->
+    <script type="text/html" id="SETTING_BASE_TOOL">
+        <button class="layui-btn layui-btn-xs" lay-event="edit">修改</button>
+        <button class="layui-btn layui-btn-xs layui-btn-disabled">修改</button>
+    </script>
+    <!-- SETTING_BASE_TOOL E -->
+
+    <!-- SETTING_PAY_TOOL S -->
+    <script type="text/html" id="SETTING_PAY_TOOL">
+        <button class="layui-btn layui-btn-xs" lay-event="edit">修改</button>
+        <button class="layui-btn layui-btn-xs layui-btn-disabled">修改</button>
+    </script>
+    <!-- SETTING_PAY_TOOL E -->
+
+    <!-- SETTING_NOTICE_TOOL S -->
+    <script type="text/html" id="SETTING_NOTICE_TOOL">
+        <button class="layui-btn layui-btn-xs" lay-event="edit">修改</button>
+        <button class="layui-btn layui-btn-xs layui-btn-disabled">修改</button>
+    </script>
+    <!-- SETTING_NOTICE_TOOL E -->
+
     <script src="./layui/layui.js"></script>
     <script>
         layui.config({
@@ -123,8 +150,122 @@
         }).use('global');
     </script>
     <script>
-        layui.use('element', function () {
-            var element = layui.element;
+        layui.use(['element', 'table', 'layer'], function () {
+            var element = layui.element,
+                table = layui.table,
+                $ = layui.jquery,
+                layer = layui.layer;
+            
+            // 渲染基本表格
+            table.render({
+                elem: '#TB_SETTING_BASE',
+                even: true,
+                cols: [[
+                    {
+                        field: 'base_info', title: '基本信息'
+                    },
+                    {
+                        field: 'cur_setting', title: '当前设置'
+                    },
+                    {
+                        field: 'explain', title: '说明'
+                    },
+                    {
+                        title: '操作', toolbar: '#SETTING_BASE_TOOL', fixed: 'right'
+                    }
+                ]],
+                data: [{
+                    base_info: '小程序id',
+                    cur_setting: 'wwwwwwwww',
+                    explain: '小程序的唯一标识。不可更改。'
+                }, {
+                    base_info: '小程序秘钥',
+                    cur_setting: '已设置',
+                    explain: '必填。用于实现以下功能：微信支付；获取小程序码。获取方法：微信小程序后台 > 设置 > 开发设置 > AppSecret(小程序秘钥)'
+                }]
+            });
+
+            table.on('tool(TB_SETTING_BASE_F)', function(obj) {
+                var event = obj.event;
+                
+                if (event === 'edit') {
+                    layer.msg('修改');
+                }
+            });
+
+            // 渲染支付表格
+            table.render({
+                elem: '#TB_SETTING_PAY',
+                even: true,
+                cols: [[
+                    {
+                        field: 'base_info', title: '支付'
+                    },
+                    {
+                        field: 'cur_setting', title: '当前设置'
+                    },
+                    {
+                        field: 'explain', title: '说明'
+                    },
+                    {
+                        title: '操作', toolbar: '#SETTING_PAY_TOOL', fixed: 'right'
+                    }
+                ]],
+                data: [{
+                    base_info: '小程序id',
+                    cur_setting: 'wwwwwwwww',
+                    explain: '小程序的唯一标识。不可更改。'
+                }, {
+                    base_info: '小程序秘钥',
+                    cur_setting: '已设置',
+                    explain: '必填。用于实现以下功能：微信支付；获取小程序码。获取方法：微信小程序后台 > 设置 > 开发设置 > AppSecret(小程序秘钥)'
+                }]
+            });
+
+            table.on('tool(TB_SETTING_PAY_F)', function (obj) {
+                var event = obj.event;
+
+                if (event === 'edit') {
+                    layer.msg('修改');
+                }
+            });
+
+            // 渲染通知表格
+            table.render({
+                elem: '#TB_SETTING_NOTICE',
+                even: true,
+                cols: [[
+                    {
+                        field: 'base_info', title: '支付'
+                    },
+                    {
+                        field: 'cur_setting', title: '当前设置'
+                    },
+                    {
+                        field: 'explain', title: '说明'
+                    },
+                    {
+                        title: '操作', toolbar: '#SETTING_NOTICE_TOOL', fixed: 'right'
+                    }
+                ]],
+                data: [{
+                    base_info: '小程序id',
+                    cur_setting: 'wwwwwwwww',
+                    explain: '小程序的唯一标识。不可更改。'
+                }, {
+                    base_info: '小程序秘钥',
+                    cur_setting: '已设置',
+                    explain: '必填。用于实现以下功能：微信支付；获取小程序码。获取方法：微信小程序后台 > 设置 > 开发设置 > AppSecret(小程序秘钥)'
+                }]
+            });
+
+            table.on('tool(TB_SETTING_NOTICE_F)', function (obj) {
+                var event = obj.event;
+
+                if (event === 'edit') {
+                    layer.msg('修改');
+                }
+            });
         });
     </script>
 </body>

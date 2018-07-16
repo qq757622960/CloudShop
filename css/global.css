@@ -11,6 +11,8 @@
   .site-mobile .site-mobile-tree { display: none !important; }
   .layui-layout-admin .layui-logo { left: -40px; } }
 @media (max-width: 320px) { .layui-layout-admin .layui-logo { left: -60px; } }
+.lz-body-container { position: absolute; top: 15px; right: 15px; bottom: 15px; left: 15px; background-color: #ffffff; overflow: auto; }
+
 .layui-side .layui-nav .layui-nav-item a i { padding-right: 10px; }
 
 .layui-nav .layui-nav-item-1 { position: relative; display: inline-block; vertical-align: middle; line-height: 60px; margin-right: 10px; color: rgba(255, 255, 255, 0.7); }
