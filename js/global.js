@@ -6,7 +6,7 @@
  */
 
 layui.define(['element'], function(exports) {
-
+    
     var $ = layui.jquery,
         element = layui.element;
     

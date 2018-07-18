@@ -168,6 +168,7 @@
         layui.use(['element', 'table', 'layer', 'form'], function () {
             var element = layui.element,
                 table = layui.table,
+                form = layui.form,
                 $ = layui.jquery;
 
             // 渲染表格
@@ -223,8 +224,7 @@
                     layer.open({
                         title: '编辑分类',
                         type: 1,
-                        content: $('#ALERT_ADD_CLASS'),
-                        btn: ['保存', '取消'],
+                        content: $('#ALERT_OPERATE_CLASS'),
                         btnAlign: 'c'
                     });
                 },
@@ -250,42 +250,60 @@
                 }
             });
             
+            var layIndex = 0;
             // 添加分类
             $('.LZ_OPERATE').on('click', function(e) {
-                layer.open({
+                layIndex = layer.open({
                     title: '添加分类',
                     type: 1,
-                    content: $('#ALERT_ADD_CLASS'),
-                    btn: ['保存', '取消'],
-                    btnAlign: 'c'
+                    content: $('#ALERT_OPERATE_CLASS'),
+                    btnAlign: 'c',
+                    end: function() {
+                        // reset 表单
+                        $('#ALERT_OPERATE_CLASS')[0].reset(); 
+                    }
                 });
+            });
+            
+            // 提交表单
+            form.on('submit(FORM_OPERATE_CLASS)', function(data) {
+                layer.msg(JSON.stringify(data.field));
+                console.log(layIndex);
+                layer.close(layIndex);
+                return false;
             })
         });
     </script>
 </body>
 
 <!-- 添加分类、编辑分类 弹窗 S -->
-<div class="layui-form lz-pad20" id="ALERT_ADD_CLASS">
+<form class="layui-form lz-pad20" id="ALERT_OPERATE_CLASS">
     <div class="layui-form-item">
         <label class="layui-form-label">分类名称</label>
         <div class="layui-input-inline">
-            <input type="text" required lay-verify="required" placeholder="" autocomplete="off" class="layui-input">
+            <input type="text" name="className" placeholder="" autocomplete="off" class="layui-input">
         </div>
     </div>
     <div class="layui-form-item">
         <label class="layui-form-label">排序</label>
         <div class="layui-input-inline">
-            <input type="text" required lay-verify="required" placeholder="" autocomplete="off" class="layui-input">
+            <input type="text" name="classSort" placeholder="" autocomplete="off" class="layui-input">
         </div>
     </div>
     <div class="layui-form-item">
         <label class="layui-form-label">状态</label>
         <div class="layui-input-inline">
-            <input type="radio" name="status" value="1" title="显示" />
-            <input type="radio" name="status" value="0" title="隐藏" />
+            <input type="radio" name="classStatus" value="1" title="显示" checked />
+            <input type="radio" name="classStatus" value="0" title="隐藏" />
         </div>
     </div>
-</div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="FORM_OPERATE_CLASS">保存</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </div>
+</form>
 <!-- 添加分类、编辑分类弹窗 E -->
 
 </html>

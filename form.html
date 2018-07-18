@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form</title>
+    <link rel="stylesheet" href="./layui/css/layui.css" />
+</head>
+
+<body>
+    <div class="layui-form" lay-filter="form">
+        <div class="layui-form-item">
+            <label class="layui-form-label">姓名</label>
+            <div class="layui-input-block">
+                <input type="text" name="username" lay-verify="number" lay-verType="tips" class="layui-input" />
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">密码</label>
+            <div class="layui-input-inline">
+                <input type="password" name="pwd" class="layui-input" />
+            </div>
+            <div class="layui-form-mid layui-word-aux">文字文字文字</div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">下拉框</label>
+            <div class="layui-input-block">
+                <select name="city" id="city" lay-search>
+                    <option value="">请选择</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item" pane>
+            <label class="layui-form-label">复选框</label>
+            <div class="layui-input-block">
+                <input type="checkbox" name="remeber1" title="复选框" />
+            </div>
+        </div>
+        <div class="layui-form-item" pane>
+            <label class="layui-form-label">复选框</label>
+            <div class="layui-input-block">
+                <input type="checkbox" name="remeber2" lay-skin="primary" title="复选框" />
+            </div>
+        </div>
+        <div class="layui-form-item" pane>
+            <label class="layui-form-label">开关</label>
+            <div class="layui-input-block">
+                <input type="checkbox" name="remeber3" lay-skin="switch" lay-text="ON|OFF">
+            </div>
+        </div>
+        <div class="layui-form-item" pane>
+            <label class="layui-form-label">性别</label>
+            <div class="layui-input-block">
+                <input type="radio" name="sex" value="nan" title="男">
+                <input type="radio" name="sex" value="nv" title="女">
+            </div>
+        </div>
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">文本域</label>
+            <div class="layui-input-block">
+                <textarea name="desc" id="" cols="30" rows="10" class="layui-textarea"></textarea>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit lay-filter="form">登录</button>
+                <button class="layui-btn" type="reset">重置</button>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <button class="layui-btn layui-btn-primary" id="addCity">原始按钮</button>
+    </div>
+
+
+    <script src="./layui/layui.js"></script>
+    <script>
+        layui.use(['form', 'layer'], function () {
+            var form = layui.form,
+                $ = layui.jquery;
+
+            form.val('form', {
+                username: 'xiafujian',
+                pwd: '123456',
+                city: '3',
+                remeber1: 'on',
+                remeber3: 'on',
+                sex: 'nan',
+                desc: '123'
+            });
+        });
+    </script>
+</body>
+
+</html>

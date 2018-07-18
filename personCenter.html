@@ -113,30 +113,43 @@
                                 <div class="layui-form-item">
                                     <label class="layui-form-label">旧密码</label>
                                     <div class="layui-input-inline">
-                                        <input type="password" name="" required placeholder="" class="layui-input">
+                                        <input type="password" name="oldPwd" required lay-verify="required" placeholder="请输入旧密码" class="layui-input">
                                     </div>
                                 </div>
                                 <div class="layui-form-item">
                                     <label class="layui-form-label">新密码</label>
                                     <div class="layui-input-inline">
-                                        <input type="password" name="" required placeholder="" class="layui-input">
+                                        <input type="password" name="newPwd" required lay-verify="required" placeholder="请输入新密码" class="layui-input">
                                     </div>
                                 </div>
                                 <div class="layui-form-item">
                                     <label class="layui-form-label">新密码确认</label>
                                     <div class="layui-input-inline">
-                                        <input type="password" name="" required placeholder="" class="layui-input">
+                                        <input type="password" name="newPwdConfirm" required lay-verify="required" placeholder="请输入新密码确认" class="layui-input">
                                     </div>
                                 </div>
                                 <div class="layui-form-item">
                                     <div class="layui-input-block">
-                                        <button class="layui-btn" lay-submit="" lay-filter="">保存</button>
+                                        <button class="layui-btn" lay-submit lay-filter="FORM_MODIFY_PWD">保存</button>
                                     </div>
-
                                 </div>
                             </form>
                         </div>
-                        <div class="layui-tab-item">CSS</div>
+                        <div class="layui-tab-item">
+                            <form action="" class="layui-form lz-pad20">
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">手机号</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="phone" required lay-verify="required|phone" placeholder="请输入手机号" class="layui-input">
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-input-block">
+                                        <button class="layui-btn" lay-submit lay-filter="FORM_MODIFY_TEL">保存</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -164,8 +177,36 @@
         }).use('global');
     </script>
     <script>
-        layui.use('element', function () {
-            var element = layui.element;
+        
+        const TIPS_PWD_NOT_EQ = '两次密码不一致';
+
+        layui.use(['element', 'form', 'layer'], function () {
+            var element = layui.element,
+                form = layui.form,
+                $ = layui.jquery;
+            
+            // 修改密码表单
+            form.on('submit(FORM_MODIFY_PWD)', function(data) {
+                // 两次密码不一致提示
+                if (data.field.newPwd !== data.field.newPwdConfirm) {
+                    layer.msg(TIPS_PWD_NOT_EQ, {icon: 5});
+                    
+                    $(data.form[1]).addClass('layui-form-danger').focus();
+                    $(data.form[2]).addClass('layui-form-danger');
+
+                    return false;
+                }
+
+                layer.msg(JSON.stringify(data.field), {icon: 5});
+                return false;
+            });
+
+            // 手机号表单
+            form.on('submit(FORM_MODIFY_TEL)', function (data) {
+                layer.msg(JSON.stringify(data.field), { icon: 5 });
+                return false;
+            });
+            
         });
     </script>
 </body>

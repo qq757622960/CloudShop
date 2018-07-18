@@ -103,22 +103,22 @@
         <div class="layui-body">
 
             <div class="lz-body-container">
-                <form action="" class="layui-form lz-pad20">
+                <form action="" class="layui-form lz-mw600 lz-pad20">
                     <div class="layui-form-item">
                         <label class="layui-form-label">店铺名称</label>
-                        <div class="layui-input-inline">
-                            <input type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+                        <div class="layui-input-block">
+                            <input type="text" name="shopName" placeholder="请输入店铺名称" autocomplete="off" class="layui-input">
                         </div>
                     </div>
                     <div class="layui-form-item">
                         <label class="layui-form-label">公告</label>
-                        <div class="layui-input-inline">
-                            <input type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+                        <div class="layui-input-block">
+                            <input type="text" name="shopNotice" placeholder="请输入公告" autocomplete="off" class="layui-input">
                         </div>
                     </div>
                     <div class="layui-form-item">
                         <label class="layui-form-label">店铺LOGO</label>
-                        <div class="layui-input-inline">
+                        <div class="layui-input-block">
                             <button type="button" class="layui-btn" id="FILE_ACTIVITY">
                                 <i class="layui-icon">&#xe67c;</i>上传图片
                             </button>
@@ -126,58 +126,52 @@
                     </div>
                     <div class="layui-form-item">
                         <label class="layui-form-label">营业时间</label>
-                        <div class="layui-input-inline">
-                            <input type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+                        <div class="layui-input-block">
+                            <input type="text" name="shopBusinessHours" placeholder="请输入营业时间" autocomplete="off" class="layui-input">
                         </div>
                     </div>
                     <div class="layui-form-item">
                         <label class="layui-form-label">门店地址</label>
-                        <div class="layui-input-inline">
-                            <input type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+                        <div class="layui-input-block">
+                            <input type="text" name="shopAddress" placeholder="请输入门店地址" autocomplete="off" class="layui-input">
                         </div>
                     </div>
                     <div class="layui-form-item">
                         <label class="layui-form-label">联系电话</label>
-                        <div class="layui-input-inline">
-                            <input type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+                        <div class="layui-input-block">
+                            <input type="text" name="shopTel" placeholder="请输入联系电话" autocomplete="off" class="layui-input">
                         </div>
                     </div>
                     <div class="layui-form-item">
                         <label class="layui-form-label">起送价</label>
-                        <div class="layui-input-inline">
-                            <input type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+                        <div class="layui-input-block">
+                            <input type="text" name="shopSendPrice" placeholder="请输入起送价" autocomplete="off" class="layui-input">
                         </div>
                     </div>
                     <div class="layui-form-item">
                         <label class="layui-form-label">配送范围</label>
-                        <div class="layui-input-inline">
-                            <input type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+                        <div class="layui-input-block">
+                            <input type="text" name="shopDisRange" placeholder="请输入配送范围" autocomplete="off" class="layui-input">
                         </div>
                     </div>
                     <div class="layui-form-item">
                         <label class="layui-form-label">配送费</label>
-                        <div class="layui-input-inline">
-                            <input type="text" name="" placeholder="" autocomplete="off" class="layui-input">
+                        <div class="layui-input-block">
+                            <input type="text" name="shopDisPrice" placeholder="请输入配送费" autocomplete="off" class="layui-input">
                         </div>
                     </div>
                     <div class="layui-form-item">
                         <label class="layui-form-label">商家信息</label>
-                        <div class="layui-input-inline">
-                            <textarea placeholder="请输入内容" class="layui-textarea"></textarea>
+                        <div class="layui-input-block">
+                            <textarea placeholder="请输入商家信息" class="layui-textarea"></textarea>
                         </div>
                     </div>
                     <div class="layui-form-item">
-                        <label class="layui-form-label">商家信息</label>
-                        <div class="layui-input-inline">
-                            <textarea placeholder="请输入内容" class="layui-textarea"></textarea>
-                        </div>
-                    </div>
-                    <!-- <div class="layui-form-item">
-                        <div class="layui-input-inline">
-                            <button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
+                        <div class="layui-input-block">
+                            <button class="layui-btn" lay-submit lay-filter="FORM_SHOP_F">保存</button>
                             <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                         </div>
-                    </div> -->
+                    </div>
                 </form>
             </div>
         </div>
@@ -204,8 +198,17 @@
         }).use('global');
     </script>
     <script>
-        layui.use('element', function () {
-            var element = layui.element;
+        layui.use(['element', 'form', 'layer'], function () {
+            var element = layui.element,
+                form = layui.form;
+
+            // 提交表单
+            form.on('submit(FORM_SHOP_F)', function(data) {
+                // 这里只是做测试, 服务端用到的时候可以自行删除 S
+                layer.msg(JSON.stringify(data.field));
+                return false;
+                // 这里只是做测试, 服务端用到的时候可以自行删除 E
+            });
         });
     </script>
 </body>
